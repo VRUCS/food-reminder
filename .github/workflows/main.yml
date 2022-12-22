@@ -1,0 +1,21 @@
+name: Gayidane rial
+
+on:
+  schedule:
+    - cron: '30 16 * * *'
+  workflow_dispatch:
+
+jobs:
+  shoroe-gayesh:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v3
+      with:
+        python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+    - name: Send tweets
+      run: |
+        python3 food.py
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
