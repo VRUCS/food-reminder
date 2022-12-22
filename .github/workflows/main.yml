@@ -1,8 +1,8 @@
-name: Gayidane rial
+name: Food reminder
 
 on:
   schedule:
-    - cron: '30 16 * * *'
+    - cron: '0 8 * * 2-3'
   workflow_dispatch:
 
 jobs:
@@ -14,7 +14,7 @@ jobs:
     - uses: actions/setup-python@v3
       with:
         python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-    - name: Send tweets
+    - name: Send to TG
       run: |
         python3 food.py
       env:
