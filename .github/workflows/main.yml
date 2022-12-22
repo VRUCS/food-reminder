@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  shoroe-gayesh:
+  start-sending:
     runs-on: ubuntu-latest
     
     steps:
@@ -16,6 +16,7 @@ jobs:
         python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
     - name: Send to TG
       run: |
+        pip install requests
         python3 food.py
       env:
         TOKEN: ${{ secrets.TOKEN }}
