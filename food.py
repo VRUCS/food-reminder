@@ -1,4 +1,4 @@
-import requests
+import requests,os
 
 def send_to_telegram(message):
 
